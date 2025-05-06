@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Jordan Store | Official Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .logo-font {
+            font-family: 'Bebas Neue', cursive;
+        }
+        
+        .jordan-red {
+            color: #ed1c24;
+        }
+        
+        .bg-jordan-red {
+            background-color: #ed1c24;
+        }
+        
+        .hover\:bg-jordan-red:hover {
+            background-color: #ed1c24;
+        }
+        
+        .sneaker-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sneaker-card {
+            transition: all 0.3s ease;
+        }
+        
+        .cart-item {
+            transition: all 0.2s ease;
+        }
+        
+        .cart-item:hover {
+            background-color: #f1f1f1;
+        }
+        
+        /* Animation for cart notification */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <i class="fas fa-basketball-ball text-2xl jordan-red mr-2"></i>
+                        <span class="logo-font text-2xl jordan-red">AIR JORDAN</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-jordan-red font-medium">Home</a>
+                    <a href="#shop" class="text-gray-700 hover:text-jordan-red font-medium">Shop</a>
+                    <a href="#about" class="text-gray-700 hover:text-jordan-red font-medium">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-jordan-red font-medium">Contact</a>
+                </div>
+                <div class="flex items-center">
+                    <button id="cart-button" class="relative p-2 text-gray-700 hover:text-jordan-red">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-jordan-red text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                    </button>
+                    <button class="md:hidden p-2 text-gray-700" id="mobile-menu-button">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
+                <a href="#" class="block px-3 py-2 text-gray-700 hover:text-jordan-red font-medium">Home</a>
+                <a href="#shop" class="block px-3 py-2 text-gray-700 hover:text-jordan-red font-medium">Shop</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-jordan-red font-medium">About</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-jordan-red font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-20 md:py-32 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 logo-font">AIR JORDAN <span class="jordan-red">1</span></h1>
+                <p class="text-lg md:text-xl mb-8 text-gray-300">The shoe that started it all. The original Air Jordan 1 revolutionized basketball footwear and culture forever.</p>
+                <a href="#shop" class="bg-jordan-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block">Shop Now</a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/skwgyqrbfzhu6uyeh0gg/air-jordan-1-mid-shoes-XkFP30.png" alt="Air Jordan 1" class="w-full max-w-md transform rotate-6 hover:rotate-0 transition duration-500">
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 logo-font">SHOP <span class="jordan-red">JORDANS</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="sneaker-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative overflow-hidden">
+                        <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/skwgyqrbfzhu6uyeh0gg/air-jordan-1-mid-shoes-XkFP30.png" alt="Air Jordan 1 Mid" class="w-full h-64 object-contain">
+                        <div class="absolute top-0 right-0 bg-jordan-red text-white px-2 py-1 text-xs font-bold">NEW</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Air Jordan 1 Mid</h3>
+                        <p class="text-gray-600 mb-4">Inspired by the original AJ1, this mid-top edition maintains the iconic look you love.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold">₱7,995</span>
+                            <button class="add-to-cart bg-gray-800 hover:bg-jordan-red text-white px-4 py-2 rounded-full transition duration-300" data-id="1" data-name="Air Jordan 1 Mid" data-price="7995" data-image="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/skwgyqrbfzhu6uyeh0gg/air-jordan-1-mid-shoes-XkFP30.png">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="sneaker-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative overflow-hidden">
+                        <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/7c6db1b1-2d8c-4e1e-9a0c-6e8e5c0e9b0a/air-jordan-4-retro-mens-shoes-4Q4J5m.png" alt="Air Jordan 4 Retro" class="w-full h-64 object-contain">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Air Jordan 4 Retro</h3>
+                        <p class="text-gray-600 mb-4">The Air Jordan 4 Retro returns with classic colors and the same cushioning as the original.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold">₱9,995</span>
+                            <button class="add-to-cart bg-gray-800 hover:bg-jordan-red text-white px-4 py-2 rounded-full transition duration-300" data-id="2" data-name="Air Jordan 4 Retro" data-price="9995" data-image="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/7c6db1b1-2d8c-4e1e-9a0c-6e8e5c0e9b0a/air-jordan-4-retro-mens-shoes-4Q4J5m.png">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="sneaker-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative overflow-hidden">
+                        <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0a0a0a0a-0a0a-0a0a-0a0a-0a0a0a0a0a0a/air-jordan-11-retro-mens-shoes-4Q4J5m.png" alt="Air Jordan 11 Retro" class="w-full h-64 object-contain">
+                        <div class="absolute top-0 right-0 bg-jordan-red text-white px-2 py-1 text-xs font-bold">BESTSELLER</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Air Jordan 11 Retro</h3>
+                        <p class="text-gray-600 mb-4">The shoe MJ wore during the 1996 championship season returns with patent leather and full-length Air.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold">₱10,995</span>
+                            <button class="add-to-cart bg-gray-800 hover:bg-jordan-red text-white px-4 py-2 rounded-full transition duration-300" data-id="3" data-name="Air Jordan 11 Retro" data-price="10995" data-image="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0a0a0a0a-0a0a-0a0a-0a0a-0a0a0a0a0a0a/air-jordan-11-retro-mens-shoes-4Q4J5m.png">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 logo-font">ABOUT <span class="jordan-red">JORDAN</span></h2>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0a0a0a0a-0a0a-0a0a-0a0a-0a0a0a0a0a0a/air-jordan-brand-history.jpg" alt="Jordan Brand History" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h3 class="text-2xl font-bold mb-4">The Legacy of Air Jordan</h3>
+                    <p class="text-gray-700 mb-4">In 1984, Michael Jordan signed with Nike, creating what would become the most iconic basketball shoe line in history. The Air Jordan 1 was banned by the NBA for not meeting uniform standards, but Nike paid the fines and turned it into a marketing triumph.</p>
+                    <p class="text-gray-700 mb-4">Today, Jordan Brand is a subsidiary of Nike and continues to release new models and retro editions of classic styles. The brand has expanded beyond basketball to include lifestyle and training products.</p>
+                    <p class="text-gray-700">Our store offers authentic Air Jordan sneakers imported directly from authorized retailers. We guarantee 100% authenticity on all our products.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 logo-font">CONTACT <span class="jordan-red">US</span></h2>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-4">Get in Touch</h3>
+                    <p class="text-gray-700 mb-6">Have questions about our products or need assistance with your order? Reach out to our customer service team.</p>
+                    
+                    <div class="mb-4">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-map-marker-alt jordan-red mr-3"></i>
+                            <span class="font-medium">123 Jordan Street, Makati City, Philippines</span>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-phone jordan-red mr-3"></i>
+                            <span class="font-medium">+63 912 345 6789</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope jordan-red mr-3"></i>
+                            <span class="font-medium">contact@jordanstore.ph</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-700 hover:text-jordan-red text-2xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-700 hover:text-jordan-red text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-700 hover:text-jordan-red text-2xl"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 md:pl-12">
+                    <form class="bg-gray-100 p-6 rounded-lg">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-jordan-red">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-jordan-red">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-jordan-red"></textarea>
+                        </div>
+                        <button type="submit" class="bg-jordan-red hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="flex items-center">
+                        <i class="fas fa-basketball-ball text-2xl jordan-red mr-2"></i>
+                        <span class="logo-font text-2xl jordan-red">AIR JORDAN</span>
+                    </a>
+                    <p class="text-gray-400 mt-2">Authentic Jordan sneakers and apparel.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Air Jordan Store. All rights reserved.</p>
+                <p class="mt-2">This website is for demonstration purposes only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold">Your Cart</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-jordan-red">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <div id="cart-items" class="mb-6">
+                <!-- Cart items will be added here dynamically -->
+                <p id="empty-cart-message" class="text-gray-500 text-center py-8">Your cart is empty</p>
+            </div>
+            
+            <div class="border-t border-gray-200 pt-4 mb-6">
+                <div class="flex justify-between mb-2">
+                    <span class="font-medium">Subtotal</span>
+                    <span id="cart-subtotal" class="font-bold">₱0</span>
+                </div>
+                <div class="flex justify-between mb-4">
+                    <span class="font-medium">Shipping</span>
+                    <span class="font-bold">Calculated at checkout</span>
+                </div>
+                <div class="flex justify-between text-lg">
+                    <span class="font-bold">Total</span>
+                    <span id="cart-total" class="font-bold">₱0</span>
+                </div>
+            </div>
+            
+            <a href="Payment.php" id="checkout-button" class="w-full bg-jordan-red hover:bg-red-700 text-white font-bold py-3 px-4 rounded-full transition duration-300 mb-4 disabled:opacity-50" disabled>
+                Proceed to Checkout
+    </a>
+            
+            <p class="text-sm text-gray-500 text-center">Free shipping on orders over ₱5,000</p>
+        </div>
+    </div>
+
+                    
+                    <p class="text-sm text-gray-500 text-center">Secure payment processing by PayMongo</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-md mx-4 p-6 text-center">
+            <div class="text-green-500 text-5xl mb-4">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Payment Successful!</h3>
+            <p class="text-gray-700 mb-6">Thank you for your purchase. Your order has been placed successfully.</p>
+            <button id="close-success-modal" class="bg-jordan-red hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                Continue Shopping
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Cart functionality
+        let cart = [];
+        
+        // Open cart sidebar
+        document.getElementById('cart-button').addEventListener('click', function() {
+            document.getElementById('cart-sidebar').classList.remove('translate-x-full');
+        });
+        
+        // Close cart sidebar
+        document.getElementById('close-cart').addEventListener('click', function() {
+            document.getElementById('cart-sidebar').classList.add('translate-x-full');
+        });
+        
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const id = this.getAttribute('data-id');
+                const name = this.getAttribute('data-name');
+                const price = parseInt(this.getAttribute('data-price'));
+                const image = this.getAttribute('data-image');
+                
+                // Check if item already in cart
+                const existingItem = cart.find(item => item.id === id);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id,
+                        name,
+                        price,
+                        image,
+                        quantity: 1
+                    });
+                }
+                
+                updateCart();
+                
+                // Pulse animation for cart icon
+                const cartCount = document.getElementById('cart-count');
+                cartCount.classList.add('pulse');
+                setTimeout(() => {
+                    cartCount.classList.remove('pulse');
+                }, 500);
+            });
+        });
+        
+        // Update cart UI
+        function updateCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartSubtotal = document.getElementById('cart-subtotal');
+            const cartTotal = document.getElementById('cart-total');
+            const checkoutButton = document.getElementById('checkout-button');
+            const emptyCartMessage = document.getElementById('empty-cart-message');
+            
+            // Update cart count
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            if (totalItems > 0) {
+                cartCount.classList.remove('hidden');
+                emptyCartMessage.classList.add('hidden');
+                checkoutButton.disabled = false;
+            } else {
+                cartCount.classList.add('hidden');
+                emptyCartMessage.classList.remove('hidden');
+                checkoutButton.disabled = true;
+            }
+            
+            // Update cart items
+            cartItemsContainer.innerHTML = '';
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item flex py-4 border-b border-gray-200';
+                cartItem.innerHTML = `
+                    <div class="w-20 h-20 bg-gray-100 rounded-lg overflow-hidden mr-4">
+                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-medium">${item.name}</h4>
+                        <div class="flex justify-between items-center mt-2">
+                            <div class="flex items-center">
+                                <button class="decrease-quantity text-gray-500 hover:text-jordan-red px-2" data-id="${item.id}">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <span class="quantity mx-2">${item.quantity}</span>
+                                <button class="increase-quantity text-gray-500 hover:text-jordan-red px-2" data-id="${item.id}">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            <span class="font-bold">₱${itemTotal.toLocaleString()}</span>
+                        </div>
+                    </div>
+                    <button class="remove-item text-gray-400 hover:text-jordan-red ml-4" data-id="${item.id}">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                `;
+                
+                cartItemsContainer.appendChild(cartItem);
+            });
+            
+            // Add event listeners to new buttons
+            document.querySelectorAll('.decrease-quantity').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = this.getAttribute('data-id');
+                    const item = cart.find(item => item.id === id);
+                    
+                    if (item.quantity > 1) {
+                        item.quantity -= 1;
+                    } else {
+                        cart = cart.filter(item => item.id !== id);
+                    }
+                    
+                    updateCart();
+                });
+            });
+            
+            document.querySelectorAll('.increase-quantity').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = this.getAttribute('data-id');
+                    const item = cart.find(item => item.id === id);
+                    item.quantity += 1;
+                    updateCart();
+                });
+            });
+            
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = this.getAttribute('data-id');
+                    cart = cart.filter(item => item.id !== id);
+                    updateCart();
+                });
+            });
+            
+            // Update totals
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            cartSubtotal.textContent = `₱${subtotal.toLocaleString()}`;
+            cartTotal.textContent = `₱${subtotal.toLocaleString()}`;
+        }
+        
+        // Checkout flow
+        document.getElementById('checkout-button').addEventListener('click', function() {
+            document.getElementById('cart-sidebar').classList.add('translate-x-full');
+            
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            document.getElementById('modal-total').textContent = `₱${subtotal.toLocaleString()}`;
+            
+            document.getElementById('checkout-modal').classList.remove('hidden');
+        });
+        
+        document.getElementById('close-checkout-modal').addEventListener('click', function() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+        });
+        
+        // PayMongo payment simulation
+        document.getElementById('paymongo-button').addEventListener('click', function() {
+            // In a real implementation, this would call the PayMongo API
+            // For this demo, we'll simulate a successful payment
+            
+            // Validate form
+            const form = document.getElementById('checkout-form');
+            const inputs = form.querySelectorAll('input, textarea');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.classList.add('border-red-500');
+                } else {
+                    input.classList.remove('border-red-500');
+                }
+            });
+            
+            if (!isValid) {
+                alert('Please fill out all required fields.');
+                return;
+            }
+            
+            // Simulate payment processing
+            this.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processing...';
+            this.disabled = true;
+            
+            setTimeout(() => {
+                document.getElementById('checkout-modal').classList.add('hidden');
+                document.getElementById('success-modal').classList.remove('hidden');
+                
+                // Clear cart
+                cart = [];
+                updateCart();
+                
+                // Reset form
+                form.reset();
+                
+                // Reset button
+                this.innerHTML = `
+                    <i class="fab fa-cc-visa mr-2"></i>
+                    <i class="fab fa-cc-mastercard mr-2"></i>
+                    <i class="fab fa-cc-jcb mr-2"></i>
+                    Pay with PayMongo
+                `;
+                this.disabled = false;
+            }, 2000);
+        });
+        
+        document.getElementById('close-success-modal').addEventListener('click', function() {
+            document.getElementById('success-modal').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
